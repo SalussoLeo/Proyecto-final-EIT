@@ -1,0 +1,52 @@
+.cubo-ppal{
+    width: 100%; margin-bottom: 150px;
+}
+.container-cubo{
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+    margin-top: 150px;
+}
+.cubo{
+    transform-style: preserve-3d;
+    width: 350px;
+    height: 350px;
+    margin: auto;
+    position: relative;
+
+    animation: loop 10s linear infinite; /* envez de llamar a todos los "animation" se puso todo en uno en fila */
+}
+.cubo img{
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    opacity: 0.9;
+
+}
+.cubo img:first-child{
+    transform: rotateY(0deg) translateZ(175px);
+}
+.cubo img:nth-child(2){
+    transform: rotateY(90deg) translateZ(175px);
+}
+.cubo img:nth-child(3){
+    transform: rotateY(180deg) translateZ(175px);
+}
+.cubo img:nth-child(4){
+    transform: rotateY(-90deg) translateZ(175px);
+}
+.cubo img:nth-child(5){
+    transform: rotateX(90deg) translateZ(175px);
+}
+.cubo img:last-child{
+    transform: rotateX(-90deg) translateZ(175px);
+}
+
+@keyframes loop{
+    from{
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to{
+        transform: rotateX(360deg) rotateY(360deg);
+
+    }
+}
